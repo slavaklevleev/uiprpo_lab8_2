@@ -14,7 +14,7 @@ before_install:
 install:
   - pip install behave
   - pip install requests
-  - pip install coveralls
+  - pip install python-coveralls
 
 script:
   - curl localhost:8000
