@@ -4,7 +4,7 @@ import os.path
 
 @given(u'a database of employees exists')
 def step_impl(context):
-    check_file = os.path.isfile('/Users/klevleev/Documents/uiprpo_lab8/employees.txt')
+    check_file = os.path.isfile('employees.txt')
     assert check_file
 
 @given('the API is running')
