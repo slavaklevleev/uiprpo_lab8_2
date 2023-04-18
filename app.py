@@ -71,6 +71,6 @@ def delete_employee(id):
             return jsonify({'result': 'Employee deleted successfully'}), 204
     return jsonify({'error': 'Employee not found'}), 404
 
-# Запуск Flask приложения
+# Запуск Flask приложения 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)
