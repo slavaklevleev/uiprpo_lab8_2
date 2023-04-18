@@ -4,7 +4,7 @@ import requests
 @given('there is an employee with the name "{name}"')
 def step_impl(context, name):
     # Send a GET request to the /employees endpoint to check that the employee exists
-    response = requests.get("http://127.0.0.1:5000/employees")
+    response = requests.get("http://localhost:5000/employees")
     employees = response.json()
     for employee in employees:
         if employee["name"] == name:
@@ -16,7 +16,7 @@ def step_impl(context, name):
 @when('the user updates the employee\'s email to "{email}"')
 def step_impl(context, email):
     # Send a PUT request to the /employees/:id endpoint to update the employee's email
-    response = requests.put(f"http://127.0.0.1:5000/employees/{context.employee_id}", json={"email": email})
+    response = requests.put(f"http://localhost:5000/employees/{context.employee_id}", json={"email": email})
     context.response = response
 
 @then('the response body should contain previous name "{name}"')

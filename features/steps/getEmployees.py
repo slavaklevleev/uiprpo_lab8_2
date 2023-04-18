@@ -4,7 +4,7 @@ import requests
 @when('the user requests all employees')
 def step_impl(context):
     # Send a GET request to the /employees endpoint to retrieve all employees
-    context.response = requests.get("http://127.0.0.1:5000/employees")
+    context.response = requests.get("http://localhost:5000/employees")
 
 @then('the response body should be a list of employees')
 def step_impl(context):

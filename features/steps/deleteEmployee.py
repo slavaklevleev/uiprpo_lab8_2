@@ -5,7 +5,7 @@ from behave import *
 def step_impl(context, name, email):
     # Add the employee to the database
     employee_data = {"name": name, "email": email}
-    response = requests.post(f"http://127.0.0.1:5000/employees", json=employee_data)
+    response = requests.post(f"http://localhost:5000/employees", json=employee_data)
     context.employeeToDelete = response.json()
     assert response.status_code == 201
 
@@ -17,13 +17,13 @@ def step_impl(context):
     print(employee_id)
 
     # Delete the employee
-    response = requests.delete(f"http://127.0.0.1:5000/employees/{employee_id}")
+    response = requests.delete(f"http://localhost:5000/employees/{employee_id}")
     context.response = response
 
 @then('the employee with the name "{name}" should no longer exist in the database')
 def step_impl(context, name):
     # Check that the employee no longer exists
-    response = requests.get(f"http://127.0.0.1:5000/employees")
+    response = requests.get(f"http://localhost:5000/employees")
     employees = response.json()
     for employee in employees:
         print(employee["name"], name)
