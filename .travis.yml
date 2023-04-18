@@ -16,6 +16,7 @@ install:
   - pip install requests
 
 script:
+  - curl localhost:8000
   - behave
 
 after_script:
