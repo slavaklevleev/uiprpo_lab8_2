@@ -1,0 +1,13 @@
+---
+language: python
+python:
+  - "3.9"
+
+install:
+  - pip install behave
+  - pip install flask
+  - pip install requests
+
+script:
+  - python employee_management.py
+  - behave

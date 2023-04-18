@@ -1,6 +1,5 @@
 import requests
 from behave import *
-import time
 
 @given('there is an employee with the name "{name}" and email "{email}"')
 def step_impl(context, name, email):
