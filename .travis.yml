@@ -14,10 +14,15 @@ before_install:
 install:
   - pip install behave
   - pip install requests
+  - pip install python-coveralls
 
 script:
   - curl localhost:8000
   - behave
+  - coverage run --source='.' -m behave
 
 after_script:
   - docker kill $(docker ps -q)
+
+after_success:
+  - coveralls

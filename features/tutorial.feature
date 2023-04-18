@@ -4,8 +4,7 @@ Feature: Employee Management
     So that I can keep track of their information and make updates as needed
 
     Background:
-        Given a database of employees exists
-        And the API is running
+        Given the API is running
 
     Scenario: Add a new employee
         When the user adds a new employee with name "John Smith" and email "john.smith@example.com"
