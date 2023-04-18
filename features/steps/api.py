@@ -1,11 +1,11 @@
 from behave import given
 import requests
-import os.path
+from pathlib import Path
 
 @given(u'a database of employees exists')
 def step_impl(context):
-    check_file = os.path.isfile('employees.txt')
-    assert check_file
+    path = Path('employees.txt')
+    assert path.is_file()
 
 @given('the API is running')
 def step_impl(context):
