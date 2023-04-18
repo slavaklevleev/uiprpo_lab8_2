@@ -11,7 +11,7 @@ def step_impl(context):
 @given('the API is running')
 def step_impl(context):
     # Make a GET request to the /health endpoint to check that the API is running
-    response = requests.get("http://localhost:5000")
+    response = requests.get("http://localhost:8000")
     assert response.status_code == 200
 
 @then('the response status code should be "{code}"')
