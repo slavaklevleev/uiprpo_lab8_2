@@ -22,5 +22,13 @@ script:
   - coverage run --source='.' -m behave
 
 after_script:
-  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls
+  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls --service=travis
+  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls --service=travis-pro
+  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls --service=travis-ci
+  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls --service=travis_ci
+  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls --service=TRAVIS
+  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls --service=TRAVIS-CI
+  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls --service=TRAVIS_CI
+  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls --service=travis ci
+  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls --service=TRAVIS CI
   - docker kill $(docker ps -q)
