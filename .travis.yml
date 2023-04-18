@@ -14,7 +14,7 @@ before_install:
 install:
   - pip install behave
   - pip install requests
-  - pip install coveralls
+  - pip install python-coveralls
 
 script:
   - curl localhost:8000
@@ -25,4 +25,4 @@ after_script:
   - docker kill $(docker ps -q)
 
 after_success:
-  - COVERALLS_REPO_TOKEN=F9cz5Pj1bChCLY4csDZkR36aZzX1aWrjh coveralls
+  - coveralls
