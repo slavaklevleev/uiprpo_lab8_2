@@ -16,4 +16,4 @@ def step_impl(context):
 
 @then('the response status code should be "{code}"')
 def step_impl(context, code):
-    assert context.response.status_code == int(code)
+    assert context.response.status_code == int(code) 
